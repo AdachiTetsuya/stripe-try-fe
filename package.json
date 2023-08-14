@@ -10,7 +10,7 @@
     "fmt": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss}'",
     "stylelint": "stylelint --fix 'src/**/*.css'",
     "preview": "vite preview",
-    "lint:precommit": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "lint:precommit": "eslint 'src/**/*.{ts,tsx} --fix'",
     "fmt:precommit": "prettier './**/*.{js,jsx,ts,tsx}' --write",
     "style:precommit": "stylelint --fix 'src/**/*.css'"
   },
