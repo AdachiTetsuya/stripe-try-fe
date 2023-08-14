@@ -11,13 +11,11 @@
     "stylelint": "stylelint 'src/**/*.{css,ts,tsx}' --max-warnings 0",
     "preview": "vite preview",
     "lint:precommit": "eslint 'src/**/*.{ts,tsx} --fix'",
-    "fmt:precommit": "prettier './**/*.{js,jsx,ts,tsx}' --write",
-    "style:precommit": "stylelint --fix 'src/**/*.{css,ts,tsx}'"
+    "fmt:precommit": "prettier './**/*.{js,jsx,ts,tsx}' --write"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": "npm eslint --fix",
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run fmt:precommit",
-    "src/**/*.{css,ts,tsx}": "npm run style:precommit"
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run fmt:precommit"
   },
   "husky": {
     "hooks": {
