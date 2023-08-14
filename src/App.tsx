@@ -1,11 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Index } from "./pages/indexPage";
+import Login from "pages/login";
+import ChapterPage from "pages/chapterPage";
+import { AuthContextProvider } from "providers/authContextProvider";
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-    </Routes>
+    <AuthContextProvider>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/chapter" element={<ChapterPage />} />
+      </Routes>
+    </AuthContextProvider>
   );
 };
 
