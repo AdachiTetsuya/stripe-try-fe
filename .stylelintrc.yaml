@@ -1,6 +1,25 @@
 extends:
   - stylelint-config-standard
-  - stylelint-config-prettier
+plugins:
+  - stylelint-order
+rules:
+  order/order:
+    - "custom-properties"
+    - "declarations"
+  order/properties-order:
+    - "display"
+    - "position"
+    - "margin"
+    - "border"
+    - "padding"
+    - "width"
+    - "height"
+    - "background"
+    - "color"
+    - "font"
+    - "text-align"
+    - "vertical-align"
+
 overrides:
   - customSyntax: "@stylelint/postcss-css-in-js"
     files:

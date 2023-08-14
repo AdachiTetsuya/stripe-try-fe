@@ -8,13 +8,16 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "fmt": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss}'",
+    "stylelint": "stylelint --fix 'src/**/*.css'",
     "preview": "vite preview",
-    "lint:precommit": "eslint 'src/**/*.{ts,tsx}' --fix",
-    "fmt:precommit": "prettier './**/*.{js,jsx,ts,tsx}' --write"
+    "lint:precommit": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "fmt:precommit": "prettier './**/*.{js,jsx,ts,tsx}' --write",
+    "style:precommit": "stylelint --fix 'src/**/*.css'"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": "npm run lint:precommit",
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run fmt:precommit"
+    "src/**/*.{ts,tsx}": "npm eslint --fix",
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run fmt:precommit",
+    "src/**/*.css": "npm run style:precommit"
   },
   "husky": {
     "hooks": {
@@ -26,6 +29,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -37,6 +41,9 @@
     "husky": "^8.0.3",
     "lint-staged": "^14.0.0",
     "prettier": "^3.0.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
