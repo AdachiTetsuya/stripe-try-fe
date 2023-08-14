@@ -8,16 +8,16 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "fmt": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss}'",
-    "stylelint": "stylelint --fix 'src/**/*.css'",
+    "stylelint": "stylelint 'src/**/*.{css,ts,tsx}' --max-warnings 0",
     "preview": "vite preview",
     "lint:precommit": "eslint 'src/**/*.{ts,tsx} --fix'",
     "fmt:precommit": "prettier './**/*.{js,jsx,ts,tsx}' --write",
-    "style:precommit": "stylelint --fix 'src/**/*.css'"
+    "style:precommit": "stylelint --fix 'src/**/*.{css,ts,tsx}'"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": "npm eslint --fix",
     "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run fmt:precommit",
-    "src/**/*.css": "npm run style:precommit"
+    "src/**/*.{css,ts,tsx}": "npm run style:precommit"
   },
   "husky": {
     "hooks": {
@@ -29,6 +29,9 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@emotion/eslint-plugin": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
