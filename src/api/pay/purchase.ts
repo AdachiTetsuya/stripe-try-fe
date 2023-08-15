@@ -1,19 +1,18 @@
 import { apiClient } from "api/axios";
+import { PostPurchase } from "utils/types/purcahse";
 
-import { PostCard } from "utils/types/card";
-
-interface NewCardReturnFormat {
+interface PurchasetReturnFormat {
   isSuccess: boolean;
   errorText: string;
 }
 
-export const createCard = async (body: PostCard) => {
-  const returnValue: NewCardReturnFormat = {
+export const createPurchase = async (body: PostPurchase) => {
+  const returnValue: PurchasetReturnFormat = {
     isSuccess: false,
     errorText: "",
   };
   await apiClient
-    .post(`cards/`, body)
+    .post(`purchase/`, body)
     .then((res) => {
       console.log(res);
       returnValue["isSuccess"] = true;

@@ -9,7 +9,7 @@ type ChapterItemProps = {
 const ChapterItem: React.FC<ChapterItemProps> = ({ chapter }) => {
   return chapter.isLocked ? (
     <div>
-      <Link to={`/purchase`}>
+      <Link to={`/purchase?chapter=${chapter.id}`}>
         <p>{chapter.title}</p>
       </Link>
     </div>
